@@ -17,7 +17,9 @@
       font-family: 'Comic Sans MS', cursive;
       overflow-x: hidden;
     }
-
+	#noBtn {
+	  transition: transform 0.2s ease;
+	}
     section {
       min-height: 100vh;
       padding: 60px 16px;
@@ -173,8 +175,8 @@
 	  </div>
 	  <div class="z-10 bg-pink-500 w-5 h-5 rounded-full border-4 border-white shadow"></div>
 	  <div class="w-5/12 flex gap-4">
-		<img src="images/family2022.jpg" class="rounded-xl shadow-lg w-1/2">
 		<img src="images/family2023.JPG" class="rounded-xl shadow-lg w-1/2">
+		<img src="images/family2022.jpg" class="rounded-xl shadow-lg w-1/2">
 	  </div>
 	</div>
 
@@ -227,21 +229,14 @@
     Will you forgive me? 🥺
   </h2>
 
-  <div class="flex flex-col items-center gap-6 mt-6 relative h-40">
-
-    <button onclick="yesClicked()"
-      class="bg-green-500 text-white px-8 py-4 text-lg rounded-full hover:scale-110 transition fade">
-      Yes 💖
-    </button>
-
-    <button id="noBtn"
-      ontouchstart="moveButton()"
-      onmouseover="moveButton()"
-      class="bg-red-400 text-white px-8 py-4 text-lg rounded-full absolute fade">
-      No 😤
-    </button>
-
-  </div>
+  <div class="forgive-buttons flex justify-center gap-6 mt-6">
+  <button id="yesBtn"  onclick="yesClicked()" class="px-6 py-3 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition">
+    Yes 💖
+  </button>
+  <button id="noBtn" class="px-6 py-3 bg-gray-400 text-white rounded-lg cursor-not-allowed">
+    No 😢
+  </button>
+</div>
 
 </section>
 
@@ -257,6 +252,13 @@ const observer = new IntersectionObserver(entries => {
 });
 
 elements.forEach(el => observer.observe(el));
+const noBtn = document.getElementById('noBtn');
+
+noBtn.addEventListener('mouseover', () => {
+  const x = Math.random() * 200 - 100; // random left/right
+  const y = Math.random() * 50 - 25; // random up/down
+  noBtn.style.transform = `translate(${x}px, ${y}px)`;
+});
 
 function moveButton() {
   const btn = document.getElementById("noBtn");
