@@ -254,10 +254,20 @@ const observer = new IntersectionObserver(entries => {
 elements.forEach(el => observer.observe(el));
 const noBtn = document.getElementById('noBtn');
 
-noBtn.addEventListener('mouseover', () => {
-  const x = Math.random() * 400 - 200; 
+
+function moveNoButton() {
+  const x = Math.random() * 400 - 200;
   const y = Math.random() * 200 - 100; 
   noBtn.style.transform = `translate(${x}px, ${y}px)`;
+}
+
+
+noBtn.addEventListener('mouseover', moveNoButton);
+
+
+noBtn.addEventListener('touchstart', (e) => {
+  e.preventDefault(); 
+  moveNoButton();
 });
 
 function moveButton() {
