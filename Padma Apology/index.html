@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You 💖</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      overflow-x: hidden;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 60px 16px;
+    }
+
+    .fade {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #hearts::before {
+      content: "💖 💕 💗 💓 💞";
+      position: fixed;
+      font-size: 20px;
+      animation: float 10s linear infinite;
+      width: 100%;
+      text-align: center;
+      top: 100%;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(-120vh); }
+    }
+	@media (max-width: 768px) {
+	  .flex-row-reverse,
+	  .flex {
+		flex-direction: column !important;
+		text-align: center !important;
+	  }
+
+	  .w-5\/12 {
+		width: 100% !important;
+		padding: 0 !important;
+	  }
+
+	  .absolute.left-1\/2 {
+		left: 10px;
+	  }
+	}
+	a[href="index.html"] {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+  </style>
+</head>
+
+<body class="bg-pink-100 text-center px-4">
+<a href="index.html"
+   class="fixed bottom-6 right-6 bg-pink-500 text-white px-5 py-3 rounded-full shadow-lg hover:bg-pink-600 hover:scale-105 transition-transform z-50">
+   🏠
+</a>
+<div id="hearts"></div>
+
+<!-- INTRO -->
+<section class="flex flex-col justify-center items-center">
+  <img id="mainCat"
+    src="https://cataas.com/cat/sad"
+    class="rounded-xl shadow mb-4 w-full max-w-xs fade">
+
+  <h1 class="text-3xl sm:text-4xl text-pink-600 font-bold fade">
+    I messed up… 😔
+  </h1>
+
+  <p class="mt-4 text-gray-700 max-w-md text-base sm:text-lg leading-relaxed fade">
+    I forgot your birthday… and I hate that I did.
+  </p>
+</section>
+
+<!-- REALIZATION -->
+<section class="flex flex-col justify-center items-center bg-pink-200">
+  <h2 class="text-2xl sm:text-3xl text-pink-700 font-bold fade">
+    Then I started thinking...
+  </h2>
+
+  <p class="mt-4 max-w-md text-gray-700 text-base sm:text-lg leading-relaxed fade">
+    About everything we've been through…  
+    and how you're one of the most important people in my life 💖
+  </p>
+</section>
+
+<!-- TIMELINE -->
+<section class="bg-white py-16">
+  <h2 class="text-2xl sm:text-3xl text-pink-600 font-bold mb-16 fade">
+    Our Story 📸
+  </h2>
+
+  <div class="relative max-w-4xl mx-auto">
+
+    <!-- Vertical line -->
+    <div class="absolute left-1/2 top-0 w-1 bg-pink-300 h-full transform -translate-x-1/2"></div>
+
+    <!-- 2016 -->
+    <div class="mb-16 flex justify-between items-center w-full fade">
+      <div class="w-5/12 text-right pr-4"><p class="text-gray-700">2016 — The beginning 💕</p></div>
+      <div class="z-10 bg-pink-500 w-5 h-5 rounded-full border-4 border-white shadow"></div>
+      <div class="w-5/12"><img src="images/2016.jpg" class="rounded-xl shadow-lg w-full"></div>
+    </div>
+
+    <!-- 2017 -->
+    <div class="mb-16 flex justify-between items-center w-full fade flex-row-reverse">
+      <div class="w-5/12 text-left pl-4"><p class="text-gray-700">2017 — Chaos started 😄</p></div>
+      <div class="z-10 bg-pink-500 w-5 h-5 rounded-full border-4 border-white shadow"></div>
+      <div class="w-5/12"><img src="images/2017.jpg" class="rounded-xl shadow-lg w-full"></div>
+    </div>
+
+    <!-- 2018 -->
+    <div class="mb-16 flex justify-between items-center w-full fade">
+      <div class="w-5/12 text-right pr-4"><p class="text-gray-700">2018 — Still iconic 💅</p></div>
+      <div class="z-10 bg-pink-500 w-5 h-5 rounded-full border-4 border-white shadow"></div>
+      <div class="w-5/12"><img src="images/2018.jpg" class="rounded-xl shadow-lg w-full"></div>
+    </div>
+
+    <!-- 2019 -->
+    <div class="mb-16 flex justify-between items-center w-full fade flex-row-reverse">
+      <div class="w-5/12 text-left pl-4"><p class="text-gray-700">2019 — We survived 😌</p></div>
+      <div class="z-10 bg-pink-500 w-5 h-5 rounded-full border-4 border-white shadow"></div>
+      <div class="w-5/12"><img src="images/2019.jpg" class="rounded-xl shadow-lg w-full"></div>
+    </div>
+
+    <!-- 2020 -->
+    <div class="mb-16 flex justify-between items-center w-full fade">
+      <div class="w-5/12 text-right pr-4"><p class="text-gray-700">2020 — Fun times 💯</p></div>
+      <div class="z-10 bg-pink-500 w-5 h-5 rounded-full border-4 border-white shadow"></div>
+      <div class="w-5/12"><img src="images/2020.jpg" class="rounded-xl shadow-lg w-full"></div>
+    </div>
+
+    <!-- 2021 -->
+    <div class="mb-16 flex justify-between items-center w-full fade flex-row-reverse">
+      <div class="w-5/12 text-left pl-4"><p class="text-gray-700">2021 — Growing stronger 😤</p></div>
+      <div class="z-10 bg-pink-500 w-5 h-5 rounded-full border-4 border-white shadow"></div>
+      <div class="w-5/12"><img src="images/2021.jpg" class="rounded-xl shadow-lg w-full"></div>
+    </div>
+
+    <!-- 2022–2024 — Family photo, growth together -->
+	<div class="mb-16 flex justify-between items-center w-full fade">
+	  <div class="w-5/12 text-right pr-4">
+		<p class="text-gray-700">
+		  2022–2023 — We couldn’t meet in person 💕<br>
+		  But we stayed connected, grew together as individuals  
+		  and as families, and your support helped me be here today.
+		</p>
+	  </div>
+	  <div class="z-10 bg-pink-500 w-5 h-5 rounded-full border-4 border-white shadow"></div>
+	  <div class="w-5/12 flex gap-4">
+		<img src="images/family2022.jpg" class="rounded-xl shadow-lg w-1/2">
+		<img src="images/family2023.jpg" class="rounded-xl shadow-lg w-1/2">
+	  </div>
+	</div>
+
+    <!-- 2024 -->
+    <div class="mb-16 flex justify-between items-center w-full fade">
+      <div class="w-5/12 text-right pr-4"><p class="text-gray-700">2024 — Met you againnnn!!!! 🫶</p></div>
+      <div class="z-10 bg-pink-500 w-5 h-5 rounded-full border-4 border-white shadow"></div>
+      <div class="w-5/12"><img src="images/2024.jpg" class="rounded-xl shadow-lg w-full"></div>
+    </div>
+
+    <!-- 2025 -->
+    <div class="mb-16 flex justify-between items-center w-full fade flex-row-reverse">
+      <div class="w-5/12 text-left pl-4"><p class="text-gray-700">2025 — More laughter 💕</p></div>
+      <div class="z-10 bg-pink-500 w-5 h-5 rounded-full border-4 border-white shadow"></div>
+      <div class="w-5/12"><img src="images/2025.jpg" class="rounded-xl shadow-lg w-full"></div>
+    </div>
+
+    <!-- 2026 -->
+    <div class="mb-16 flex justify-between items-center w-full fade">
+      <div class="w-5/12 text-right pr-4"><p class="text-gray-700">2026 — To infinity ✨</p></div>
+      <div class="z-10 bg-pink-500 w-5 h-5 rounded-full border-4 border-white shadow"></div>
+      <div class="w-5/12"><img src="images/2026.jpg" class="rounded-xl shadow-lg w-full"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- APOLOGY -->
+<section class="flex flex-col justify-center items-center bg-pink-200">
+  <h2 class="text-2xl sm:text-3xl text-pink-700 font-bold fade">
+    I’m really sorry 💔
+  </h2>
+
+  <p class="mt-4 max-w-md text-gray-700 text-base sm:text-lg leading-relaxed fade">
+    I’ve been thinking about this a lot… and I honestly feel awful.  
+    Not because I forgot a date, but because I never want to be the reason you feel unimportant.  
+
+    You’ve been there for me through everything…  
+    and I hate that I messed up something that matters.  
+
+    You mean more to me than I ever say.  
+    I’m really, really sorry 💔
+  </p>
+</section>
+
+<!-- GAME -->
+<section class="flex flex-col justify-center items-center">
+
+  <h2 class="text-3xl sm:text-4xl text-pink-600 font-bold mb-4 fade">
+    Will you forgive me? 🥺
+  </h2>
+
+  <div class="flex flex-col items-center gap-6 mt-6 relative h-40">
+
+    <button onclick="yesClicked()"
+      class="bg-green-500 text-white px-8 py-4 text-lg rounded-full hover:scale-110 transition fade">
+      Yes 💖
+    </button>
+
+    <button id="noBtn"
+      ontouchstart="moveButton()"
+      onmouseover="moveButton()"
+      class="bg-red-400 text-white px-8 py-4 text-lg rounded-full absolute fade">
+      No 😤
+    </button>
+
+  </div>
+
+</section>
+
+<script>
+const elements = document.querySelectorAll('.fade');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+elements.forEach(el => observer.observe(el));
+
+function moveButton() {
+  const btn = document.getElementById("noBtn");
+
+  const maxX = window.innerWidth - 100;
+  const maxY = window.innerHeight - 100;
+
+  const x = Math.random() * maxX - maxX / 2;
+  const y = Math.random() * maxY - maxY / 2;
+
+  btn.style.transform = `translate(${x}px, ${y}px)`;
+}
+
+function yesClicked() {
+  if (navigator.vibrate) navigator.vibrate(100);
+
+  confetti({ particleCount: 300, spread: 120 });
+
+  document.getElementById("mainCat").src = "https://cataas.com/cat/happy";
+
+  setTimeout(() => {
+    window.location.href = "secret.html";
+  }, 1200);
+}
+</script>
+
+</body>
+</html>
